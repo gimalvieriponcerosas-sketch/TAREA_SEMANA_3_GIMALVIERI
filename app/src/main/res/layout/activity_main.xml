@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!-- MENU PRINCIPAL -->
+    <LinearLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escuela Nuevo Horizonte"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Semana Cultural"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnPrograma"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Ver Programa"
+            android:layout_marginTop="60dp"/>
+
+        <Button
+            android:id="@+id/btnFragmento"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Ver Fragmento de Lectura"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- PANTALLA PROGRAMA (con CRUD) -->
+    <ScrollView
+        android:id="@+id/layoutPrograma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Programa Semana Cultural"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/etEventoId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Código (para editar/eliminar)"
+                android:inputType="number"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/etDia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Día (ej: LUNES)"/>
+
+            <EditText
+                android:id="@+id/etHora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hora (ej: 9:00 am)"/>
+
+            <EditText
+                android:id="@+id/etActividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Actividad"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnInsertarEvento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Insertar"/>
+
+                <Button
+                    android:id="@+id/btnActualizarEvento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Editar"/>
+
+                <Button
+                    android:id="@+id/btnEliminarEvento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Eliminar"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvHorario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:lineSpacingExtra="6dp"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:id="@+id/btnVolverPrograma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- PANTALLA FRAGMENTO (con CRUD) -->
+    <ScrollView
+        android:id="@+id/layoutFragmento"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fragmento de Lectura"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/etFragmentoId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Código (para editar/eliminar)"
+                android:inputType="number"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/etTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Título"/>
+
+            <EditText
+                android:id="@+id/etAutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Autor"/>
+
+            <EditText
+                android:id="@+id/etTextoFragmento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Texto del fragmento"
+                android:minLines="3"
+                android:gravity="top"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnInsertarFragmento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Insertar"/>
+
+                <Button
+                    android:id="@+id/btnActualizarFragmento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Editar"/>
+
+                <Button
+                    android:id="@+id/btnEliminarFragmento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Eliminar"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:lineSpacingExtra="6dp"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:id="@+id/btnVolverFragmento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volver"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
